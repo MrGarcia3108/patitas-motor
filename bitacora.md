@@ -73,44 +73,26 @@ Cambian la referencia siguiente de C y la cabeza. Tamaño: 2 → 3.
 **1. Eliminar la cabeza**
 
 Antes:
-cabeza              cola
-   |                  |
-   v                  v
-  [A] ----> [B] ---> [C] ---> null
+cabeza [A] ----> [B] ---> cola [C] ---> null 
 
 Después:
-cabeza     cola
-   |         |
-   v         v
-  [B] ----> [C] ---> null
+cabeza [B] ----> cola [C] ---> null
 
 **2. Eliminar un nodo intermedio**
 
 Antes:
-cabeza              cola
-   |                  |
-   v                  v
-  [A] ----> [B] ---> [C] ---> null
+cabeza [A] ----> [B] ---> cola [C] ---> null
 
 Después:
-cabeza     cola
-   |         |
-   v         v
-  [A] ----> [C] ---> null
+cabeza [A] ----> cola [C] ---> null
 
 **3. Eliminar la cola**
 
 Antes:
-cabeza              cola
-   |                  |
-   v                  v
-  [A] ----> [B] ---> [C] ---> null
+cabeza [A] ----> [B] ---> cola [C] ---> null
 
 Después:
-cabeza     cola
-   |         |
-   v         v
-  [A] ----> [B] ---> null
+cabeza [A] ----> cola [B] ---> null
 
 ### Complejidad de las operaciones
 
