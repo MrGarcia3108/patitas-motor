@@ -65,3 +65,61 @@ Cambian la referencia siguiente de C y la cabeza. Tamaño: 2 → 3.
 | aArreglo | O(n) | O(n) | Crea un arreglo. |
 | estaVacia | O(1) | O(1) | Compara con cero. |
 | obtenerTamanio | O(1) | O(1) | tamaño almacenado. |
+
+## MiniReto 3: Corregir sin romper cadena
+
+### Dibujos
+
+**1. Eliminar la cabeza**
+
+Antes:
+cabeza              cola
+   |                  |
+   v                  v
+  [A] ----> [B] ---> [C] ---> null
+
+Después:
+cabeza     cola
+   |         |
+   v         v
+  [B] ----> [C] ---> null
+
+**2. Eliminar un nodo intermedio**
+
+Antes:
+cabeza              cola
+   |                  |
+   v                  v
+  [A] ----> [B] ---> [C] ---> null
+
+Después:
+cabeza     cola
+   |         |
+   v         v
+  [A] ----> [C] ---> null
+
+**3. Eliminar la cola**
+
+Antes:
+cabeza              cola
+   |                  |
+   v                  v
+  [A] ----> [B] ---> [C] ---> null
+
+Después:
+cabeza     cola
+   |         |
+   v         v
+  [A] ----> [B] ---> null
+
+### Complejidad de las operaciones
+
+| Método | Tiempo | Espacio | Justificación |
+|---|---|---|---|
+| buscar | O(n) | O(1) | Hasta encontrar el dato. |
+| insertarDespuesDe | O(n) | O(1) | Busca el nodo y modifica. |
+| eliminar | O(n) | O(1) | Busca el nodo conservando. |
+
+### ¿Por qué eliminar la cola requiere recorrerla?
+
+Una solamente tiene referencias hacia el siguiente nodo. Aunque existe una referencia directa, no podemos acceder directamente.
