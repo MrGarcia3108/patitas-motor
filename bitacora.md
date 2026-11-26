@@ -105,3 +105,15 @@ cabeza [A] ----> cola [B] ---> null
 ### ¿Por qué eliminar la cola requiere recorrerla?
 
 Una solamente tiene referencias hacia el siguiente nodo. Aunque existe una referencia directa, no podemos acceder directamente.
+
+## MiniReto 4: Patitas v0.1
+
+### Comparación lista enlazada y arreglo
+
+| Operación | ListaEnlazada | Arreglo |
+|---|---|---|
+| Agregar al final | O(1) | O(1) amortizado |
+| Agregar al inicio | O(1) | O(n) |
+| Acceder a la atención número k | O(k), peor caso O(n) | O(1) |
+| Buscar | O(n) | O(n) |
+| Eliminar la primera | O(1) | O(n) |
