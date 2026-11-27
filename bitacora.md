@@ -156,3 +156,32 @@ Cantidad: 2
 - La cola basada en nodos permite encolar porque tiene referencias directas al frente y al final.
 - El arreglo utiliza push para insertar y shift para eliminar.
 - Al desencolar, la cola tiene una complejidad total O(n).
+
+## MiniReto 6: Urgencias primero
+
+### Cálculo
+
+| Mascota | Tipo | Llegada | Atención | Espera |
+|---|---|---|---|---|
+| Toby | General | 8:00 | 8:00 | 0 min |
+| Luna | Urgencia | 8:10 | 8:20 | 10 min |
+| Kira | Urgencia | 8:25 | 8:40 | 15 min |
+| Rocky | Urgencia | 9:00 | 9:00 | 0 min |
+| Max | General | 8:05 | 9:20 | 75 min |
+| Simón | General | 8:20 | 9:40 | 80 min |
+| Nala | General | 8:40 | 10:00 | 80 min |
+
+
+Promedio urgencias: (10 + 15 + 0) / 3 = 8.33 min.
+Promedio generales: (0 + 75 + 80 + 80) / 4 = 58.75 min.
+
+### Comparación con el programa
+
+| Resultado | Cálculo manual | Programa |
+|---|---|---|
+| Orden de atención | Toby, Luna, Kira, Rocky, Max, Simón, Nala | Toby, Luna, Kira, Rocky, Max, Simón, Nala |
+| Promedio urgencias | 8.33 min | 8.33 min |
+| Promedio generales | 58.75 min | 58.75 min |
+
+- Toby va primero porque fue el primero en llegar, cuando luna llego, a toby ya lo estaban atendiendo por eso le toca esperar aunque fuera de urgencias.
+- A continuacion, se sigue con las mascotas que vengan con urgencias, y las mascotas que llegaron desde antes pero que tienen cita general les tocaria esperar.
