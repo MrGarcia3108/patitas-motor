@@ -117,3 +117,42 @@ Una solamente tiene referencias hacia el siguiente nodo. Aunque existe una refer
 | Acceder a la atención número k | O(k), peor caso O(n) | O(1) |
 | Buscar | O(n) | O(n) |
 | Eliminar la primera | O(1) | O(n) |
+
+## MiniReto 5: La sala de espera
+
+### Dibujos 
+
+**Después de encolar a Lola, Toby y Mía:**
+
+frente [Lola] ----> [Toby] ----> final [Mía] ---> null
+Cantidad: 3
+
+**Después de desencolar una vez:**
+
+frente [Toby] ----> final [Mía] ---> null
+Cantidad: 2
+
+### Medición con 100.000
+
+| Operación | Tiempo |
+|---|---|
+| Cola - Encolar | 17.546ms |
+| Cola - Desencolar | 2.301ms |
+| Arreglo - Push | 3.482ms |
+| Arreglo - Shift | 1.760s |
+
+### Comparación
+
+| Operación | Cola con nodos | Arreglo | Justificación |
+|---|---|---|---|
+| Encolar | O(1) | O(1) amortizado | La cola accede directamente al final. |
+| Desencolar | O(1) | O(n) | La cola actualiza el frente. |
+| Ver frente | O(1) | O(1) | Acceso directo al primer elemento. |
+| Está vacía | O(1) | O(1) | Consulta la cantidad de elementos. |
+| Tamaño | O(1) | O(1) | La cantidad se encuentra almacenada. |
+
+### Diferencia de rendimiento
+
+- La cola basada en nodos permite encolar porque tiene referencias directas al frente y al final.
+- El arreglo utiliza push para insertar y shift para eliminar.
+- Al desencolar, la cola tiene una complejidad total O(n).
