@@ -185,3 +185,59 @@ Promedio generales: (0 + 75 + 80 + 80) / 4 = 58.75 min.
 
 - Toby va primero porque fue el primero en llegar, cuando luna llego, a toby ya lo estaban atendiendo por eso le toca esperar aunque fuera de urgencias.
 - A continuacion, se sigue con las mascotas que vengan con urgencias, y las mascotas que llegaron desde antes pero que tienen cita general les tocaria esperar.
+
+## MiniReto 7: Deshacer y rehacer
+
+### justificacion de estructura
+
+Utilize pila utilizando nodos para reutilizar la clase Nodo y realizar todas las operaciones en tiempo constante.
+
+### Traza de las acciones
+
+**1. Agregar A**
+
+Historial: cabeza y cola [A] ---> null
+Deshacer: tope [Agregar A] ---> null
+Rehacer: null
+
+**2. Agregar B**
+
+Historial: cabeza [A] ---> cola [B] ---> null
+Deshacer: tope [Agregar B] ---> [Agregar A] ---> null
+Rehacer: null
+
+**3. Eliminar A**
+
+Historial: cabeza y cola [B] ---> null
+Deshacer: tope [Eliminar A] ---> [Agregar B] ---> [Agregar A] ---> null
+Rehacer: null
+
+**4. Deshacer**
+
+Historial: cabeza [A] ---> cola [B] ---> null
+Deshacer: tope [Agregar B] ---> [Agregar A] ---> null
+Rehacer: tope [Eliminar A] ---> null
+
+**5. Deshacer**
+
+Historial: cabeza y cola [A] ---> null
+Deshacer: tope [Agregar A] ---> null
+Rehacer: tope [Agregar B] ---> [Eliminar A] ---> null
+
+**6. Rehacer**
+
+Historial: cabeza [A] ---> cola [B] ---> null
+Deshacer: tope [Agregar B] ---> [Agregar A] ---> null
+Rehacer: tope [Eliminar A] ---> null
+
+**7. Agregar C**
+
+Historial: cabeza [A] ---> [B] ---> cola [C] ---> null
+Deshacer: tope [Agregar C] ---> [Agregar B] ---> [Agregar A] ---> null
+Rehacer: null
+
+**8. Rehacer**
+
+Historial: cabeza [A] ---> [B] ---> cola [C] ---> null
+Deshacer: tope [Agregar C] ---> [Agregar B] ---> [Agregar A] ---> null
+Rehacer: null
