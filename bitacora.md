@@ -241,3 +241,14 @@ Rehacer: null
 Historial: cabeza [A] ---> [B] ---> cola [C] ---> null
 Deshacer: tope [Agregar C] ---> [Agregar B] ---> [Agregar A] ---> null
 Rehacer: null
+
+## MiniReto 8: Patitas v0.2 — La recepción completa
+
+### Estructuras de datos del motor
+
+| Estructura | Principio | Uso | Complejidad de operaciones |
+|---|---|---|---|
+| Lista enlazada | Secuencial | Almacenar los historiales. | Agregar al inicio y al final: O(1). |
+| Cola | FIFO | Administrar turnos de urgencias y generales. | Encolar, desencolar, ver frente, consultar tamaño: O(1). |
+| Pila | LIFO | Acciones de deshacer y rehacer del editor. | Apilar, desapilar, ver tope, consultar tamaño: O(1). |
+| Map | Clave-valor | Asociar mascota con su historial. | Insertar, consultar y eliminar por clave. |
