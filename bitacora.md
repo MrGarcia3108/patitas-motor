@@ -284,3 +284,26 @@ Total acumulado: 2 + 1 = 3
 
 tope = null
 Resultado final: 3 servicios
+
+## MiniReto 10: Buscar en profundidad
+
+### Error
+
+Aplicar el 10 % de descuento dentro de la funcion recursiva.
+
+**Calculo**
+
+- Esterilizacion: (280.000 + 350.000) * 0.9 = 567.000
+- Limpieza dental: 150.000 * 0.9 = 135.000
+- Cirugias: (567.000 + 135.000) * 0.9 = 631.800
+
+### Comparacion de resultados
+
+| Resultado | Precio |
+|---|---:|
+| Precio original | $780.000 |
+| Descuento repetido | $631.800 |
+| Descuento correcto | $702.000 |
+| Diferencia | $70.200 |
+
+El calculo aplica un descuento efectivo del 19 % en lugar del 10 %.
