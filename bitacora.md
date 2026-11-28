@@ -307,3 +307,37 @@ Aplicar el 10 % de descuento dentro de la funcion recursiva.
 | Diferencia | $70.200 |
 
 El calculo aplica un descuento efectivo del 19 % en lugar del 10 %.
+
+## MiniReto 11: El historial, de forma recursiva
+
+### Impresion al reves
+
+La funcion imprimirAlReves() realiza primero la llamada recursiva al siguiente nodo y despues imprime el dato actual.
+
+Original:
+cabeza [A] ---> [B] ---> cola [C] ---> null
+
+Pila de llamadas:
+tope [C] ---> [B] ---> [A] ---> null
+
+Orden de impresion:
+[C] ---> [B] ---> [A]
+
+### 100.000 nodos
+
+Tamaño almacenado: 100000
+RangeError: Maximum call stack size exceeded
+
+La funcion tamanioRecursivo() necesita almacenar las llamadas pendientes en la pila de ejecucion. Memoria auxiliar es O(n). Con 100.000 nodos supera la capacidad de la pila y un desbordamiento.
+
+### Comparacion de complejidades
+
+| Operacion | Tiempo iterativa | Memoria | Tiempo recursiva | Memoria |
+|---|---|---|---|---|
+| Contar nodos | O(n) | O(1) | O(n) | O(n) |
+| Obtener tamaño almacenado | O(1) | O(1) | No | aplica |
+| Costo total | O(n) | O(1) | O(n) | O(n) |
+| Buscar | O(n) | O(1) | O(n) | O(n) |
+| Imprimir al reves | O(n) | O(n) | O(n) | O(n) |
+
+Las funciones recursivas como ejercicio de pruebas, pero se eligen las iterativas para trabajar con historiales.
