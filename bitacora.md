@@ -2,61 +2,61 @@
 ### Diagrama de nodos
 
 - cabeza
-- [Vacunación | siguiente]
+- [Vacunacion | siguiente]
 - [Control de peso | siguiente]
 - [Limpieza dental | null]
 
 ### Enlace perdido
 
 - cabeza
-- [Vacunación | null]
+- [Vacunacion | null]
 - [Control de peso] --> [Limpieza dental] --> null
 
-El recorrido solamente muestra la primera atención porque su referencia siguiente es null.
+El recorrido solamente muestra la primera atencion porque su referencia siguiente es null.
 
 ## MiniReto 2: Lista enlazada
 
 ### Dibujos 
 
-**1. lista vacía**
+**1. lista vacia**
 
 Antes: cabeza = null, cola = null
-Después: cabeza y cola --> [A] --> null
+Despues: cabeza y cola --> [A] --> null
 Cambian cabeza y cola. Tamaño: 0 → 1.
 
 **2. lista con un nodo**
 
 Antes:   cabeza y cola --> [A] --> null
-Después: cabeza --> [A] --> [B] --> null
+Despues: cabeza --> [A] --> [B] --> null
 Cambian la referencia siguiente de A y la cola. Tamaño: 1 → 2.
 
 **3. lista con varios nodos**
 
 Antes:   cabeza --> [A] --> [B] --> null
-Después: cabeza --> [A] --> [B] --> [C] --> null
+Despues: cabeza --> [A] --> [B] --> [C] --> null
 Cambian la referencia siguiente de B y la cola. Tamaño: 2 → 3.
 
-**4. inicio de una lista vacía**
+**4. inicio de una lista vacia**
 
 Antes: cabeza = null, cola = null
-Después: cabeza y cola --> [A] --> null
+Despues: cabeza y cola --> [A] --> null
 Cambian cabeza y cola. Tamaño: 0 → 1.
 
 **5. inicio de una lista con un nodo**
 
 Antes:   cabeza y cola --> [A] --> null
-Después: cabeza --> [B] --> [A] --> null
+Despues: cabeza --> [B] --> [A] --> null
 Cambian la referencia siguiente de B y la cabeza. Tamaño: 1 → 2.
 
 **6. inicio de una lista con varios nodos**
 
 Antes:   cabeza --> [B] --> [A] --> null
-Después: cabeza --> [C] --> [B] --> [A] --> null
+Despues: cabeza --> [C] --> [B] --> [A] --> null
 Cambian la referencia siguiente de C y la cabeza. Tamaño: 2 → 3.
 
-### Complejidad de los métodos
+### Complejidad de los metodos
 
-| Método | Tiempo | Espacio | Justificación |
+| Metodo | Tiempo | Espacio | Justificacion |
 |---|---|---|---|
 | constructor | O(1) | O(1) | Inicializa las propiedades. |
 | agregarAlFinal | O(1) | O(1) | Accede directamente a la cola. |
@@ -75,7 +75,7 @@ Cambian la referencia siguiente de C y la cabeza. Tamaño: 2 → 3.
 Antes:
 cabeza [A] ----> [B] ---> cola [C] ---> null 
 
-Después:
+Despues:
 cabeza [B] ----> cola [C] ---> null
 
 **2. Eliminar un nodo intermedio**
@@ -83,7 +83,7 @@ cabeza [B] ----> cola [C] ---> null
 Antes:
 cabeza [A] ----> [B] ---> cola [C] ---> null
 
-Después:
+Despues:
 cabeza [A] ----> cola [C] ---> null
 
 **3. Eliminar la cola**
@@ -91,30 +91,30 @@ cabeza [A] ----> cola [C] ---> null
 Antes:
 cabeza [A] ----> [B] ---> cola [C] ---> null
 
-Después:
+Despues:
 cabeza [A] ----> cola [B] ---> null
 
 ### Complejidad de las operaciones
 
-| Método | Tiempo | Espacio | Justificación |
+| Metodo | Tiempo | Espacio | Justificacion |
 |---|---|---|---|
 | buscar | O(n) | O(1) | Hasta encontrar el dato. |
 | insertarDespuesDe | O(n) | O(1) | Busca el nodo y modifica. |
 | eliminar | O(n) | O(1) | Busca el nodo conservando. |
 
-### ¿Por qué eliminar la cola requiere recorrerla?
+### ¿Por que eliminar la cola requiere recorrerla?
 
 Una solamente tiene referencias hacia el siguiente nodo. Aunque existe una referencia directa, no podemos acceder directamente.
 
 ## MiniReto 4: Patitas v0.1
 
-### Comparación lista enlazada y arreglo
+### Comparacion lista enlazada y arreglo
 
-| Operación | ListaEnlazada | Arreglo |
+| Operacion | ListaEnlazada | Arreglo |
 |---|---|---|
 | Agregar al final | O(1) | O(1) amortizado |
 | Agregar al inicio | O(1) | O(n) |
-| Acceder a la atención número k | O(k), peor caso O(n) | O(1) |
+| Acceder a la atencion numero k | O(k), peor caso O(n) | O(1) |
 | Buscar | O(n) | O(n) |
 | Eliminar la primera | O(1) | O(n) |
 
@@ -122,33 +122,33 @@ Una solamente tiene referencias hacia el siguiente nodo. Aunque existe una refer
 
 ### Dibujos 
 
-**Después de encolar a Lola, Toby y Mía:**
+**Despues de encolar a Lola, Toby y Mia:**
 
-frente [Lola] ----> [Toby] ----> final [Mía] ---> null
+frente [Lola] ----> [Toby] ----> final [Mia] ---> null
 Cantidad: 3
 
-**Después de desencolar una vez:**
+**Despues de desencolar una vez:**
 
-frente [Toby] ----> final [Mía] ---> null
+frente [Toby] ----> final [Mia] ---> null
 Cantidad: 2
 
-### Medición con 100.000
+### Medicion con 100.000
 
-| Operación | Tiempo |
+| Operacion | Tiempo |
 |---|---|
 | Cola - Encolar | 17.546ms |
 | Cola - Desencolar | 2.301ms |
 | Arreglo - Push | 3.482ms |
 | Arreglo - Shift | 1.760s |
 
-### Comparación
+### Comparacion
 
-| Operación | Cola con nodos | Arreglo | Justificación |
+| Operacion | Cola con nodos | Arreglo | Justificacion |
 |---|---|---|---|
 | Encolar | O(1) | O(1) amortizado | La cola accede directamente al final. |
 | Desencolar | O(1) | O(n) | La cola actualiza el frente. |
 | Ver frente | O(1) | O(1) | Acceso directo al primer elemento. |
-| Está vacía | O(1) | O(1) | Consulta la cantidad de elementos. |
+| Esta vacia | O(1) | O(1) | Consulta la cantidad de elementos. |
 | Tamaño | O(1) | O(1) | La cantidad se encuentra almacenada. |
 
 ### Diferencia de rendimiento
@@ -159,27 +159,27 @@ Cantidad: 2
 
 ## MiniReto 6: Urgencias primero
 
-### Cálculo
+### Calculo
 
-| Mascota | Tipo | Llegada | Atención | Espera |
+| Mascota | Tipo | Llegada | Atencion | Espera |
 |---|---|---|---|---|
 | Toby | General | 8:00 | 8:00 | 0 min |
 | Luna | Urgencia | 8:10 | 8:20 | 10 min |
 | Kira | Urgencia | 8:25 | 8:40 | 15 min |
 | Rocky | Urgencia | 9:00 | 9:00 | 0 min |
 | Max | General | 8:05 | 9:20 | 75 min |
-| Simón | General | 8:20 | 9:40 | 80 min |
+| Simon | General | 8:20 | 9:40 | 80 min |
 | Nala | General | 8:40 | 10:00 | 80 min |
 
 
 Promedio urgencias: (10 + 15 + 0) / 3 = 8.33 min.
 Promedio generales: (0 + 75 + 80 + 80) / 4 = 58.75 min.
 
-### Comparación con el programa
+### Comparacion con el programa
 
-| Resultado | Cálculo manual | Programa |
+| Resultado | Calculo manual | Programa |
 |---|---|---|
-| Orden de atención | Toby, Luna, Kira, Rocky, Max, Simón, Nala | Toby, Luna, Kira, Rocky, Max, Simón, Nala |
+| Orden de atencion | Toby, Luna, Kira, Rocky, Max, Simon, Nala | Toby, Luna, Kira, Rocky, Max, Simon, Nala |
 | Promedio urgencias | 8.33 min | 8.33 min |
 | Promedio generales | 58.75 min | 58.75 min |
 
@@ -242,7 +242,7 @@ Historial: cabeza [A] ---> [B] ---> cola [C] ---> null
 Deshacer: tope [Agregar C] ---> [Agregar B] ---> [Agregar A] ---> null
 Rehacer: null
 
-## MiniReto 8: Patitas v0.2 — La recepción completa
+## MiniReto 8: Patitas v0.2 — La recepcion completa
 
 ### Estructuras de datos del motor
 
@@ -252,3 +252,35 @@ Rehacer: null
 | Cola | FIFO | Administrar turnos de urgencias y generales. | Encolar, desencolar, ver frente, consultar tamaño: O(1). |
 | Pila | LIFO | Acciones de deshacer y rehacer del editor. | Apilar, desapilar, ver tope, consultar tamaño: O(1). |
 | Map | Clave-valor | Asociar mascota con su historial. | Insertar, consultar y eliminar por clave. |
+
+## Minireto 9 : Traza de la pila de llamadas
+
+**1. Llamar a Cirugias**
+
+tope [Cirugias] ---> null
+Total acumulado: 0
+
+**2. Llamar a Esterilizacion**
+
+tope [Esterilizacion] ---> [Cirugias] ---> null
+Esterilizacion tiene 2 servicios propios.
+
+**3. Retornar de Esterilizacion**
+
+tope [Cirugias] ---> null
+Total acumulado: 0 + 2 = 2
+
+**4. Llamar a Limpieza dental**
+
+tope [Limpieza dental] ---> [Cirugias] ---> null
+Limpieza dental tiene 1 servicio propio.
+
+**5. Retornar de Limpieza dental**
+
+tope [Cirugias] ---> null
+Total acumulado: 2 + 1 = 3
+
+**6. Retornar de Cirugias**
+
+tope = null
+Resultado final: 3 servicios
